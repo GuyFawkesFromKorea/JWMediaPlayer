@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="JWMediaPlayer.Settings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:JWMediaPlayer"
+             Width="auto" Height="auto">
+    <Control.Resources>
+        <ResourceDictionary>
+            <Thickness x:Key="DialogMargin">10 5 10 5</Thickness>
+        </ResourceDictionary>
+    </Control.Resources>
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="auto">
+            <TextBlock Text="스냅샷 폴더 설정"
+                       FontSize="15"
+                       FontWeight="Bold"
+                       Foreground="{DynamicResource AccentColorBrush}"
+                       Margin="{StaticResource DialogMargin}"/>
+            <DockPanel HorizontalAlignment="Stretch" LastChildFill="False" Margin="0"  VerticalAlignment="Top">
+                <TextBlock Text="경로명 : "
+                           FontSize="15"
+                           FontWeight="Bold"
+                           Foreground="{DynamicResource AccentColorBrush}"
+                           Margin="{StaticResource DialogMargin}"
+                           DockPanel.Dock="Left"/>
+                <TextBlock Text="{Binding SnapShotPath}"
+                           Width="250"
+                           FontSize="15"
+                           FontWeight="Bold"
+                           Foreground="{DynamicResource AccentColorBrush}"
+                           Margin="{StaticResource DialogMargin}"
+                           DockPanel.Dock="Left"/>
+                <Button
+                    Width="50"
+                    Height="50"
+                    Style="{DynamicResource MetroCircleButtonStyle}"
+                    x:Name="btnPath"
+                    DockPanel.Dock="Right">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="..." FontSize="15" Foreground="{DynamicResource AccentColorBrush}"/>
+                    </StackPanel>
+                </Button>
+            </DockPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Width="50"
+                            Height="50"
+                            Style="{DynamicResource MetroCircleButtonStyle}"
+                            Foreground="{DynamicResource AccentColorBrush}"
+                            x:Name="btnOK">
+                    <Rectangle Width="20"
+                                   Height="20"
+                                   Fill="{Binding  Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_check}" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                </Button>
+                <Button Width="50"
+                            Height="50"
+                            Style="{DynamicResource MetroCircleButtonStyle}"
+                            Foreground="{DynamicResource AccentColorBrush}"
+                            x:Name="btnCancel">
+                    <Rectangle Width="20"
+                                   Height="20"
+                                   Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_cancel}" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                </Button>
+            </StackPanel>
+
+
+        </StackPanel>
+    </Grid>
+</UserControl>

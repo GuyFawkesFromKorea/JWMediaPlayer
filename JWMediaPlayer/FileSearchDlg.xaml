@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="JWMediaPlayer.FileSearchDlg"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             >
+    <Control.Resources>
+        <ResourceDictionary>
+            <Thickness x:Key="DialogMargin">10 5 10 5</Thickness>
+        </ResourceDictionary>
+    </Control.Resources>
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="경로찾기 "
+                               FontSize="15"
+                               FontWeight="Bold"
+                               Foreground="{DynamicResource AccentColorBrush}"
+                               Margin="{StaticResource DialogMargin}"/>
+            <TextBlock Text="파일 경로 또는 URL을 입력하세요."
+                               FontSize="15"
+                               Foreground="{DynamicResource AccentColorBrush}"
+                               Margin="{StaticResource DialogMargin}"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="txtPath"
+                         Width="300"
+                         Margin="{StaticResource DialogMargin}"
+                         Text="{Binding Path=FileUrlPath}"
+                         VerticalAlignment="Center"
+                         FontSize="15"
+                         />
+                <Button
+                    Width="50"
+                    Height="50"
+                    Style="{DynamicResource MetroCircleButtonStyle}"
+                    x:Name="btnPath"
+                    Click="btnPath_Click">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="..." FontSize="15" Foreground="{DynamicResource AccentColorBrush}"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Width="50"
+                            Height="50"
+                            Style="{DynamicResource MetroCircleButtonStyle}"
+                            Foreground="{DynamicResource AccentColorBrush}"
+                            x:Name="btnOK">
+                        <Rectangle Width="20"
+                                   Height="20"
+                                   Fill="{Binding  Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                            <Rectangle.OpacityMask>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_check}" />
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                    </Button>
+                    <Button Width="50"
+                            Height="50"
+                            Style="{DynamicResource MetroCircleButtonStyle}"
+                            Foreground="{DynamicResource AccentColorBrush}"
+                            x:Name="btnCancel">
+                        <Rectangle Width="20"
+                                   Height="20"
+                                   Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                            <Rectangle.OpacityMask>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_cancel}" />
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</UserControl>
