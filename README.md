@@ -3,9 +3,14 @@
 This program is made by referring to the library below.
 
 
-![Meta.Vlc Link](https://github.com/higankanshi/Meta.Vlc)
-![Mahapps WPF UI](https://github.com/MahApps/MahApps.Metro)
-![MaterialDesignInXamlToolkit WPF UI](https://github.com/ButchersBoy/MaterialDesignInXamlToolkit)
+[Meta.Vlc Link](https://github.com/higankanshi/Meta.Vlc)
+
+
+[Mahapps WPF UI](https://github.com/MahApps/MahApps.Metro)
+
+
+[MaterialDesignInXamlToolkit WPF UI](https://github.com/ButchersBoy/MaterialDesignInXamlToolkit)
+
 
 JWMediaPlayer는 한국어 출력시 나눔폰트로 출력되므로 아래의 링크로 나눔폰트를 설치하세요.
 
